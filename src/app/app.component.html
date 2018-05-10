@@ -59,6 +59,65 @@
                 <td> percent: 2.1-1</td>
                 <td>{{ a | percent: '2.1-1' }}</td>
             </tr>
+            <tr>
+                <td> {{ salario }} </td>
+                <td> currency </td>
+                <td>{{ salario | currency }}</td>
+            </tr>
+            <tr>
+                <td> {{ salario }} </td>
+                <td> currency'EUR':true<small>True para mostrar símbolo de la moneda</small></td>
+                <td>{{ salario | currency:'EUR':true }}</td>
+            </tr>
+            <tr>
+                <td> {{ salario }} </td>
+                <td> currency'EUR':true:'4.0-0'<small>Personalizar formato del numero</small></td>
+                <td>{{ salario | currency:'EUR':true:'4.0-0' }}</td>
+            </tr>
+            <tr>
+                <td> {{ salario }} </td>
+                <td> number :'.2-2' </td>
+                <td>{{ salario | number:'.2-2' }}</td>
+            </tr>
+            <tr>
+                <td> {{ valorDePromesa }} </td>
+                <td> async </td>
+                <td>{{ valorDePromesa | async }}</td>
+            </tr>
+            <tr>
+                <td> {{ fecha }} </td>
+                <td> fecha </td>
+                <td>{{ fecha | date }}</td>
+            </tr>
+            <tr>
+                <td> {{ fecha }} </td>
+                <td> fecha:'medium' </td>
+                <td>{{ fecha | date:'medium' }}</td>
+            </tr>
+            <tr>
+                <td> {{ fecha }} </td>
+                <td> fecha:'MMMM - dd' </td>
+                <td>{{ fecha | date:'MMMM - dd' }}</td>
+            </tr>
+            <tr>
+                <td> {{ nombre2 }} </td>
+                <td> capitalizado </td>
+                <td>{{ nombre2 | capitalizado}}</td>
+            </tr>
+            <tr>
+                <td> {{ nombre2 }} </td>
+                <td> capitalizado </td>
+                <td>{{ nombre2 | capitalizado:false}}</td>
+            </tr>
+            <tr>
+                <td> {{ nombre }} </td>
+                <td> password: {{ activar }}
+                    <br>
+                    <button (click)="activar = !activar" type="button" class="btn btn-outline-primary">Activar/Desactivar</button>
+                </td>
+                <td>{{ nombre | contrasena: activar}}</td>
+            </tr>
+
 
         </tbody>
     </table>
@@ -67,5 +126,12 @@
     <ul>
         <li *ngFor="let item of arreglo | slice: 5: 20">{{ item}}</li>
     </ul>
+    <h4>JSON</h4>
+    <pre>{{ producto | json }}</pre>
 
+    <h4>Youtube Video</h4>
+
+    <iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/' " frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
+
+<br><br><br><br><br><br><br><br><br><br>
